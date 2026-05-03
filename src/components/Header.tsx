@@ -106,10 +106,11 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
           >
             Ranking
           </motion.button>
+          {/* Blog & Commissions hidden — remove hidden to re-enable */}
           <motion.button
             ref={(el) => { buttonRefs.current['blog'] = el; }}
             onClick={() => handleTabClick('blog')}
-            className="nav-item px-3 sm:px-4 py-2 text-sm font-normal relative z-10"
+            className="nav-item px-3 sm:px-4 py-2 text-sm font-normal relative z-10 hidden"
             animate={{
               color: activeTab === 'blog'
                 ? isDark ? '#1c1c1c' : '#b5b3a7'
@@ -122,7 +123,7 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
           <motion.button
             ref={(el) => { buttonRefs.current['commissions'] = el; }}
             onClick={() => handleTabClick('commissions')}
-            className="nav-item px-3 sm:px-4 py-2 text-sm font-normal relative z-10"
+            className="nav-item px-3 sm:px-4 py-2 text-sm font-normal relative z-10 hidden"
             animate={{
               color: activeTab === 'commissions'
                 ? isDark ? '#1c1c1c' : '#b5b3a7'
