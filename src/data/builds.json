@@ -1,5 +1,76 @@
 [
   {
+    "id": "QpyZzdnCTjw",
+    "title": "Diversity TKL",
+    "youtubeTitle": "Diversity TKL with lubed Tecsee Bocchi",
+    "category": "MX",
+    "timestamp": "2026-04-25T12:00:00Z",
+    "images": [
+      "./images/QpyZzdnCTjw/thumbnail.jpg"
+    ],
+    "youtubeUrl": "https://youtu.be/QpyZzdnCTjw",
+    "specs": {
+      "Keyboard": "DIVERSITY by keyspensory (reano by Prime Korea)",
+      "Keycaps": "GMK First Love",
+      "Switches": "PH Studio x Tecsee Bocchi (Zaku Recolor)",
+      "Lube": "Prelubed",
+      "Films": "-",
+      "Springs": "22mm Extended Single Staged Spring (Stock)",
+      "Plate": "Full Aluminium",
+      "Mount": "Plate Top Mount",
+      "Stabilizers": "JWK with 205g0",
+      "PCB": "Hotswap"
+    }
+  },
+  {
+    "id": "iP9CcTd8pHM",
+    "title": "Diversity TKL",
+    "youtubeTitle": "Diversity TKL with lubed Cherry MX Purples",
+    "category": "MX",
+    "timestamp": "2026-04-06T12:00:00Z",
+    "images": [
+      "./images/iP9CcTd8pHM/thumbnail.jpg"
+    ],
+    "youtubeUrl": "https://youtu.be/iP9CcTd8pHM",
+    "specs": {
+      "Keyboard": "DIVERSITY by keyspensory (reano by Prime Korea)",
+      "Keycaps": "GMK Symbiote (Central Core + Standard Galactic + Mutation)",
+      "Switches": "Cherry MX Purple (ultrasonic'd and trimmed with Geon Trimmer)",
+      "Lube": "Tribosys 3203",
+      "Films": "TX 0.15",
+      "Springs": "TX UXL 45g with GPL 105",
+      "Plate": "Full Aluminium",
+      "Mount": "Plate Top Mount",
+      "Stabilizers": "Staebies V2 on spacebar, Cherry + C3 on rest (lubed with i dont remember. probably 205g0)",
+      "PCB": "Solder",
+      "Others": "matching ano :P"
+    }
+  },
+  {
+    "id": "p0UZcurMFDc",
+    "title": "Toro60",
+    "youtubeTitle": "Toro60 with lubed Cherry MX Blacks",
+    "category": "MX",
+    "timestamp": "2026-03-01T12:00:00Z",
+    "images": [
+      "./images/p0UZcurMFDc/thumbnail.jpg"
+    ],
+    "youtubeUrl": "https://youtu.be/p0UZcurMFDc",
+    "specs": {
+      "Keyboard": "Toro60 (Sakura CWKL)",
+      "Keycaps": "KKB Jindo + GMK Hineybeige",
+      "Switches": "Cherry MX Black Hyperglide",
+      "Lube": "Krytox 205g0",
+      "Films": "PC (?)",
+      "Springs": "22mm Doble-Stage 45g (?) lubed with GPL 105",
+      "Plate": "Full Alu",
+      "Mount": "Top Mount",
+      "Stabilizers": "Cherry Housings + ? wire for spacebar, Neo Stabs for rest; with Permatex Dialectric Grease",
+      "PCB": "Hotswap",
+      "Others": "Oring Force Break"
+    }
+  },
+  {
     "id": "bNFwVyN-PAA",
     "title": "Diversity TKL",
     "youtubeTitle": "Diversity TKL with lubed Cherry MX Whites",
@@ -45,6 +116,29 @@
       "Stabilizers": "QK Stabs (?) with 205g0",
       "PCB": "Wireless Hotswap PCB",
       "Others": ""
+    }
+  },
+  {
+    "id": "7rCSfg6f6Ko",
+    "title": "QK60",
+    "youtubeTitle": "QK60 with stock HMX Hyacinth V2",
+    "category": "MX",
+    "timestamp": "2026-02-15T12:00:00Z",
+    "images": [
+      "./images/7rCSfg6f6Ko/thumbnail.jpg"
+    ],
+    "youtubeUrl": "https://youtu.be/7rCSfg6f6Ko",
+    "specs": {
+      "Keyboard": "QK60 (Mint Bottom, Smokey Top, Black weight, HHKB)",
+      "Keycaps": "Keykobo Dolch (Light Base)",
+      "Switches": "HMX Hyacinth V2U",
+      "Lube": "-",
+      "Films": "-",
+      "Springs": "-",
+      "Plate": "Full FR4",
+      "Mount": "Gasket Socks",
+      "Stabilizers": "QK Stabs (?) with 205g0",
+      "PCB": "Wireless Hotswap PCB"
     }
   },
   {
@@ -365,7 +459,7 @@
   {
     "id": "Vgo9UKqfSbI",
     "title": "f1-09",
-    "youtubeTitle": "√ƒ1-8x with lubed Cherry MX2A Browns, Hyperglide MX Blacks & Retooled MX Blues",
+    "youtubeTitle": "\u221a\u01921-8x with lubed Cherry MX2A Browns, Hyperglide MX Blacks & Retooled MX Blues",
     "category": "MX",
     "timestamp": "2025-11-16T14:00:50Z",
     "images": [
@@ -385,7 +479,7 @@
     ],
     "youtubeUrl": "https://youtu.be/Vgo9UKqfSbI",
     "specs": {
-      "Keyboard": "√ƒ1-8x / f1-09 by olivious / 키요미",
+      "Keyboard": "\u221a\u01921-8x / f1-09 by olivious / \ud0a4\uc694\ubbf8",
       "Keycaps": "GMK Hineybeige + OG Doubleshots",
       "Switches": "Retooled Cherry MX Blue",
       "Lube": "GHv4",
@@ -1662,7 +1756,7 @@
       "Stabilizers": "SW Knight V2",
       "PCB": "Solder",
       "Artisan": "-",
-      "Others": "thanks to Manu for lending me his unit for content 🫶"
+      "Others": "thanks to Manu for lending me his unit for content \ud83e\udef6"
     }
   },
   {
@@ -1687,7 +1781,7 @@
       "Stabilizers": "SW Knight V2",
       "PCB": "Hotswap",
       "Artisan": "Spookycaps MissingNo",
-      "Others": "thanks to Manu for lending me his unit for content 🫶"
+      "Others": "thanks to Manu for lending me his unit for content \ud83e\udef6"
     }
   },
   {
@@ -1704,6 +1798,30 @@
       "Keyboard": "Neo80 WK (Spray-coated White)",
       "Keycaps": "GMK Amethyst",
       "Switches": "Kailh BCP (Black Cherry Pie)",
+      "Lube": "-",
+      "Films": "-",
+      "Springs": "-",
+      "Plate": "Alu",
+      "Mount": "Gasket Dumbell",
+      "Stabilizers": "TX AP lubed with Krytox 205g0",
+      "PCB": "Stock Hotswap",
+      "Others": "All foams"
+    }
+  },
+  {
+    "id": "6PDePduGrTs",
+    "title": "Neo80",
+    "youtubeTitle": "Neo80 | Gasket Dumbbell, Gasket Jacket, O-ring & Sandwich Mountings",
+    "category": "MX",
+    "timestamp": "2024-09-28T12:00:00Z",
+    "images": [
+      "./images/6PDePduGrTs/thumbnail.jpg"
+    ],
+    "youtubeUrl": "https://youtu.be/6PDePduGrTs",
+    "specs": {
+      "Keyboard": "Neo80 WK (Spray-coated White)",
+      "Keycaps": "GMK Amethyst",
+      "Switches": "HMX Hyacinth V2",
       "Lube": "-",
       "Films": "-",
       "Springs": "-",
