@@ -1809,30 +1809,6 @@
     }
   },
   {
-    "id": "6PDePduGrTs",
-    "title": "Neo80",
-    "youtubeTitle": "Neo80 | Gasket Dumbbell, Gasket Jacket, O-ring & Sandwich Mountings",
-    "category": "MX",
-    "timestamp": "2024-09-28T12:00:00Z",
-    "images": [
-      "./images/6PDePduGrTs/thumbnail.jpg"
-    ],
-    "youtubeUrl": "https://youtu.be/6PDePduGrTs",
-    "specs": {
-      "Keyboard": "Neo80 WK (Spray-coated White)",
-      "Keycaps": "GMK Amethyst",
-      "Switches": "HMX Hyacinth V2",
-      "Lube": "-",
-      "Films": "-",
-      "Springs": "-",
-      "Plate": "Alu",
-      "Mount": "Gasket Dumbell",
-      "Stabilizers": "TX AP lubed with Krytox 205g0",
-      "PCB": "Stock Hotswap",
-      "Others": "All foams"
-    }
-  },
-  {
     "id": "Y14DpRLXWj8",
     "title": "Neo80",
     "youtubeTitle": "Neo80 with SW x Haimu MP Tactile",
