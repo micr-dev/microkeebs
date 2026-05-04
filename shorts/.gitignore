@@ -1,0 +1,5 @@
+output/
+batch_results.json
+__pycache__/
+specs_sanitized.json
+youtube.com_cookies.txt
