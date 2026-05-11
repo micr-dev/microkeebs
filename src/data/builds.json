@@ -1,5 +1,30 @@
 [
   {
+    "id": "v8KCi_4YJ24",
+    "title": "TGR-03 PROTO",
+    "youtubeTitle": "TGR-03 PROTO with lubed Vintage Cherry MX Blacks",
+    "category": "MX",
+    "timestamp": "2026-05-10T00:00:00.000Z",
+    "images": [
+      "./images/v8KCi_4YJ24/thumbnail.jpg"
+    ],
+    "youtubeUrl": "https://youtu.be/v8KCi_4YJ24",
+    "specs": {
+      "Keyboard": "TGR-03 PROTOTYPE (Silver)",
+      "Keycaps": "GMK Hineybeige + GMK Alt Grrrr",
+      "Switches": "Vintage Cherry MX Blacks",
+      "Lube": "ghv4",
+      "Films": "TX 0.15",
+      "Springs": "TX UXL 45g with GPL 105",
+      "Plate": "Full Ultem",
+      "Mount": "Geon x Nuxros KeySnap, FKM 70A Black",
+      "Stabilizers": "SW Knight V4 + C3 spacebar, Cherry + C3 on rest (lubed with 205g0)",
+      "Artisan": "Project Lilith Mecha Beige",
+      "PCB": "Hiney H87A",
+      "Others": "Orange/Yellow LED"
+    }
+  },
+  {
     "id": "QpyZzdnCTjw",
     "title": "Diversity TKL",
     "youtubeTitle": "Diversity TKL with lubed Tecsee Bocchi",

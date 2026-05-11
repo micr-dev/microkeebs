@@ -142,35 +142,42 @@ const LogoWall = ({
         onMouseEnter={() => pauseOnHover && setIsPaused(true)}
         onMouseLeave={() => pauseOnHover && setIsPaused(false)}
       >
-        <div
-          className={`flex-shrink-0 flex items-center justify-start min-w-full marquee-group ${
-            direction === "vertical" ? "flex-col min-h-full" : ""
-          }`}
-          style={{ gap: "var(--gap)" }}
-        >
-          {items.map((item, idx) => (
-            <Magnetic key={idx} className="flex items-center justify-center pointer-events-auto">
-              <div>{item}</div>
-            </Magnetic>
-          ))}
-        </div>
-        <div
-          aria-hidden="true"
-          className={`flex-shrink-0 flex items-center justify-start min-w-full marquee-group ${
-            direction === "vertical" ? "flex-col min-h-full" : ""
-          }`}
-          style={{ gap: "var(--gap)" }}
-        >
-          {items.map((item, idx) => (
-            <Magnetic key={`dup1-${idx}`} className="flex items-center justify-center pointer-events-auto">
-              <div>{item}</div>
-            </Magnetic>
-          ))}
+        <div className="marquee-track">
+          <div
+            className={`flex-shrink-0 flex items-center justify-start marquee-group ${
+              direction === "vertical" ? "flex-col min-h-full" : ""
+            }`}
+            style={{ gap: "var(--gap)" }}
+          >
+            {items.map((item, idx) => (
+              <Magnetic key={idx} className="flex items-center justify-center pointer-events-auto">
+                <div>{item}</div>
+              </Magnetic>
+            ))}
+          </div>
+          <div
+            aria-hidden="true"
+            className={`flex-shrink-0 flex items-center justify-start marquee-group ${
+              direction === "vertical" ? "flex-col min-h-full" : ""
+            }`}
+            style={{ gap: "var(--gap)" }}
+          >
+            {items.map((item, idx) => (
+              <Magnetic key={`dup1-${idx}`} className="flex items-center justify-center pointer-events-auto">
+                <div>{item}</div>
+              </Magnetic>
+            ))}
+          </div>
         </div>
       </div>
       
       <style>{`
-        .marquee-group {
+        .marquee-track {
+          display: flex;
+          flex-shrink: 0;
+        }
+
+        .mask-horizontal .marquee-track {
           animation: scroll-x var(--duration) linear infinite;
         }
 
@@ -213,7 +220,7 @@ const LogoWall = ({
             transform: translateX(0);
           }
           to {
-            transform: translateX(-100%);
+            transform: translateX(-50%);
           }
         }
 
@@ -222,21 +229,22 @@ const LogoWall = ({
             transform: translateY(0);
           }
           to {
-            transform: translateY(calc(-100% - var(--gap)));
+            transform: translateY(calc(-50% - var(--gap)));
           }
         }
 
         /* Vertical animation modifier */
-        .mask-vertical .marquee-group {
+        .mask-vertical .marquee-track {
+          flex-direction: column;
           animation-name: scroll-y;
         }
 
-        .paused .marquee-group {
+        .paused .marquee-track {
           animation-play-state: paused !important;
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .marquee-group {
+          .marquee-track {
             animation-play-state: paused;
           }
         }
