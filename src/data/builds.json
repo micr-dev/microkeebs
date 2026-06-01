@@ -1,5 +1,29 @@
 [
   {
+    "id": "7aM8Dg6wePs",
+    "title": "Navi60",
+    "youtubeTitle": "Navi60 with lubed Cherry MX Blacks",
+    "category": "MX",
+    "timestamp": "2026-05-30T12:00:00.000Z",
+    "images": [
+      "./images/7aM8Dg6wePs/thumbnail.jpg"
+    ],
+    "youtubeUrl": "https://youtu.be/7aM8Dg6wePs",
+    "specs": {
+      "Keyboard": "Navi60 (Red)",
+      "Keycaps": "GMK DMG R3",
+      "Switches": "Cherry MX Black Hyperglide",
+      "Lube": "Krytox 205g0",
+      "Films": "PC (?)",
+      "Springs": "22mm Doble-Stage 45g (?) lubed with GPL 105",
+      "Plate": "Full Alu",
+      "Mount": "Top Mount",
+      "Stabilizers": "Durock V2 lubed with 205g0",
+      "PCB": "Hotswap",
+      "Others": ""
+    }
+  },
+  {
     "id": "v8KCi_4YJ24",
     "title": "TGR-03 PROTO",
     "youtubeTitle": "TGR-03 PROTO with lubed Vintage Cherry MX Blacks",
@@ -484,7 +508,7 @@
   {
     "id": "Vgo9UKqfSbI",
     "title": "f1-09",
-    "youtubeTitle": "\u221a\u01921-8x with lubed Cherry MX2A Browns, Hyperglide MX Blacks & Retooled MX Blues",
+    "youtubeTitle": "√ƒ1-8x with lubed Cherry MX2A Browns, Hyperglide MX Blacks & Retooled MX Blues",
     "category": "MX",
     "timestamp": "2025-11-16T14:00:50Z",
     "images": [
@@ -504,7 +528,7 @@
     ],
     "youtubeUrl": "https://youtu.be/Vgo9UKqfSbI",
     "specs": {
-      "Keyboard": "\u221a\u01921-8x / f1-09 by olivious / \ud0a4\uc694\ubbf8",
+      "Keyboard": "√ƒ1-8x / f1-09 by olivious / 키요미",
       "Keycaps": "GMK Hineybeige + OG Doubleshots",
       "Switches": "Retooled Cherry MX Blue",
       "Lube": "GHv4",
@@ -1781,7 +1805,7 @@
       "Stabilizers": "SW Knight V2",
       "PCB": "Solder",
       "Artisan": "-",
-      "Others": "thanks to Manu for lending me his unit for content \ud83e\udef6"
+      "Others": "thanks to Manu for lending me his unit for content 🫶"
     }
   },
   {
@@ -1806,7 +1830,7 @@
       "Stabilizers": "SW Knight V2",
       "PCB": "Hotswap",
       "Artisan": "Spookycaps MissingNo",
-      "Others": "thanks to Manu for lending me his unit for content \ud83e\udef6"
+      "Others": "thanks to Manu for lending me his unit for content 🫶"
     }
   },
   {
