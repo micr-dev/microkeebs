@@ -280,7 +280,7 @@ function AppContent() {
       </SmoothScroll>
       <ThemeToggle />
       <MobilePopup />
-      {!debugMode && <TargetCursor targetSelector="button.nav-item.px-3, svg, rect, svg.iconify.iconify--mingcute, div.w-4.h-4, select.border.px-3, button.px-4.py-1, img.gallery-media__image, button.fixed.bottom-6, div.w-full.aspect-video" />}
+      {!debugMode && <TargetCursor targetSelector=".cursor-target, button.nav-item.px-3, svg, rect, svg.iconify.iconify--mingcute, div.w-4.h-4, select.border.px-3, button.px-4.py-1, img.gallery-media__image, button.fixed.bottom-6, div.w-full.aspect-video" />}
       {debugMode && <DebugCursor onClose={() => setDebugMode(false)} />}
     </>
   );
