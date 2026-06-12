@@ -55,8 +55,8 @@ async function main() {
 
   for (const file of imageFiles) {
     const ext = path.extname(file);
-    // Construct new filename: image.webp -> image_sm.webp
-    const newFile = file.replace(ext, `_sm${ext}`);
+    // Construct new filename: always output as _sm.webp
+    const newFile = file.replace(ext, '_sm.webp');
 
     if (fs.existsSync(newFile)) {
       skippedCount++;
@@ -67,7 +67,7 @@ async function main() {
       await sharp(file)
         .resize(TARGET_WIDTH)
         .webp({ quality: QUALITY }) // Convert everything to optimized WebP
-        .toFile(newFile.replace(ext, '_sm.webp')); // Force .webp extension for consistency
+        .toFile(newFile);
 
       console.log(`✅ Generated: ${path.basename(newFile)}`);
       processedCount++;

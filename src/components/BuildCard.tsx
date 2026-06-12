@@ -1,9 +1,17 @@
+import { useRef, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { KeyboardBuild } from "../types/Build";
 import { useTheme } from "../contexts/use-theme";
 // import { DecryptedText } from "./DecryptedText";
 import { TextType } from "./TextType";
 import { LineSwap } from "./LineSwap";
+
+/** Derive LQIP pixel placeholder path from a source image path.
+ *  ./images/VIDEO_ID/thumbnail.jpg -> /images/lqip/VIDEO_ID/thumbnail-lqip.png
+ */
+function getLqipSrc(src: string): string {
+  return src.replace(/^\.\/images\//, "/images/lqip/").replace(/\.\w+$/, "-lqip.png");
+}
 
 interface BuildCardProps {
   build: KeyboardBuild;
@@ -51,6 +59,22 @@ export function BuildCard({
   const smallThumbnail = coverImage
     ? coverImage.replace(/(\.[^.]+)$/, "_sm.webp")
     : "";
+  const lqipSrc = coverImage ? getLqipSrc(coverImage) : "";
+  const lqipRef = useRef<HTMLDivElement>(null);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  const fadeLqip = useCallback(() => {
+    if (lqipRef.current) lqipRef.current.style.opacity = "0";
+  }, []);
+
+  // Handle images already in browser cache
+  useEffect(() => {
+    const img = imgRef.current;
+    if (img && img.complete && img.naturalWidth) {
+      img.classList.remove("opacity-0");
+      fadeLqip();
+    }
+  }, [fadeLqip]);
 
   return (
     <div onClick={onClick} className="cursor-pointer cursor-target">
@@ -58,20 +82,15 @@ export function BuildCard({
         <div className={`gallery-media ${isDark ? 'gallery-media--dark' : 'gallery-media--light'}`}>
           {coverImage && (
             <>
-              <div
-                className={`absolute inset-0 animate-pulse ${
-                  isDark ? "bg-[#2a2a2a]" : "bg-[#b5b3a7]"
-                }`}
-              >
+              {lqipSrc && (
                 <div
-                  className={`w-full h-full flex items-center justify-center ${
-                    isDark ? "text-[#a7a495]" : "text-[#1c1c1c]"
-                  }`}
-                >
-                  <div className="w-6 h-6 border-2 border-current border-t-transparent rounded-full animate-spin"></div>
-                </div>
-              </div>
+                  ref={lqipRef}
+                  className="lqip-placeholder"
+                  style={{ backgroundImage: `url(${lqipSrc})` }}
+                />
+              )}
               <img
+                ref={imgRef}
                 src={smallThumbnail}
                 alt={build.title}
                 className="gallery-media__image opacity-0"
@@ -81,8 +100,7 @@ export function BuildCard({
                 onLoad={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.classList.remove("opacity-0");
-                  const skeleton = target.previousElementSibling as HTMLElement;
-                  if (skeleton) skeleton.style.display = "none";
+                  fadeLqip();
                 }}
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
@@ -91,6 +109,7 @@ export function BuildCard({
                     return;
                   }
                   target.style.display = "none";
+                  fadeLqip();
                   const placeholder = target.nextElementSibling as HTMLElement;
                   if (placeholder) placeholder.style.display = "flex";
                 }}

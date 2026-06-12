@@ -499,6 +499,17 @@ body[data-theme="dark"] .gallery-media {
   transition-delay: 0.1s;
 }
 
+.lqip-placeholder {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  background-size: cover;
+  background-position: center;
+  image-rendering: pixelated;
+}
+
 .gallery-media__corner--br {
   bottom: var(--gallery-corner-gap);
   right: var(--gallery-corner-gap);

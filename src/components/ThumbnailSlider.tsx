@@ -3,6 +3,13 @@ import { motion, AnimatePresence } from 'motion/react';
 import { useTheme } from '../contexts/use-theme';
 import { cn } from '@/lib/utils';
 
+/** Derive LQIP pixel placeholder path from a source image path.
+ *  ./images/VIDEO_ID/thumbnail.jpg -> /images/lqip/VIDEO_ID/thumbnail-lqip.png
+ */
+function getLqipSrc(src: string): string {
+  return src.replace(/^\.\/images\//, '/images/lqip/').replace(/\.\w+$/, '-lqip.png');
+}
+
 interface ThumbnailSliderProps {
   images: string[];
   mainImageMb?: string;
@@ -13,6 +20,8 @@ export function ThumbnailSlider({ images, mainImageMb = '0.25rem' }: ThumbnailSl
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const thumbnailsRef = useRef<HTMLDivElement>(null);
+  const lqipRef = useRef<HTMLDivElement>(null);
+  const mainImgRef = useRef<HTMLImageElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState(0);
   const [dragOffset, setDragOffset] = useState(0);
@@ -114,6 +123,15 @@ export function ThumbnailSlider({ images, mainImageMb = '0.25rem' }: ThumbnailSl
         onTouchMove={handleDragMove}
         onTouchEnd={handleDragEnd}
       >
+        {/* LQIP placeholder for main image */}
+        {images[currentIndex] && (
+          <div
+            key={`lqip-${currentIndex}`}
+            ref={lqipRef}
+            className="lqip-placeholder"
+            style={{ backgroundImage: `url(${getLqipSrc(images[currentIndex])})` }}
+          />
+        )}
         <AnimatePresence initial={false} custom={direction} mode="popLayout">
           <motion.div
             key={currentIndex}
@@ -132,10 +150,16 @@ export function ThumbnailSlider({ images, mainImageMb = '0.25rem' }: ThumbnailSl
             }}
           >
             <img
+              ref={mainImgRef}
               src={images[currentIndex]}
               alt={`Slide ${currentIndex + 1}`}
               className="w-full h-full object-contain pointer-events-none"
+              loading="lazy"
+              decoding="async"
               draggable={false}
+              onLoad={() => {
+                if (lqipRef.current) lqipRef.current.style.opacity = '0';
+              }}
             />
           </motion.div>
         </AnimatePresence>
@@ -221,6 +245,8 @@ export function ThumbnailSlider({ images, mainImageMb = '0.25rem' }: ThumbnailSl
                 src={image}
                 alt={`Thumbnail ${index + 1}`}
                 className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
                 draggable={false}
               />
             </motion.button>
