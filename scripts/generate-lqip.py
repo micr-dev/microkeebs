@@ -10,7 +10,7 @@ from PIL import Image
 
 PUBLIC_DIR = Path(__file__).resolve().parent.parent / "public" / "images"
 LQIP_DIR = PUBLIC_DIR / "lqip"
-TARGET_WIDTH = 20
+TARGET_WIDTH = 40
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".webp"}
 
 
