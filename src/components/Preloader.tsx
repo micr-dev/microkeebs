@@ -70,14 +70,17 @@ export function Preloader() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(true);
   const { isDark } = useTheme();
-  const allBuildIds = useMemo(
-    () => buildsData.map((build: { id: string }) => build.id),
-    [],
-  );
+  const eligibleBuildIds = useMemo(() => {
+    // Only use builds as recent as or newer than Chilkey ND TKL and the first Diversity TKL
+    const cutoff = new Date('2024-11-19T15:18:00Z').getTime();
+    return buildsData
+      .filter((build: { id: string; timestamp: string }) => new Date(build.timestamp).getTime() >= cutoff)
+      .map((build: { id: string }) => build.id);
+  }, []);
   const randomIds = useMemo(() => {
-    const shuffled = [...allBuildIds].sort(() => Math.random() - 0.5);
+    const shuffled = [...eligibleBuildIds].sort(() => Math.random() - 0.5);
     return shuffled.slice(0, 16);
-  }, [allBuildIds]);
+  }, [eligibleBuildIds]);
   const preloaderRows = useMemo(() => getPreloaderRows(randomIds), [randomIds]);
 
   useEffect(() => {
