@@ -94,9 +94,10 @@ export function Preloader() {
       gsap.timeline({ onComplete: () => setVisible(false) })
         .from(images, {
           scale: 0,
-          duration: 0.9,
-          ease: 'power3.out',
-          stagger: 0.12,
+          yPercent: -50,
+          duration: 1,
+          ease: 'power1.out',
+          stagger: 0.2,
           force3D: true,
           transformOrigin: '50% 50%',
         })
@@ -111,8 +112,8 @@ export function Preloader() {
         )
         .to(preloader, {
           yPercent: -110,
-          duration: 0.8,
-          ease: 'power2.inOut',
+          duration: 0.6,
+          ease: 'power1.out',
           force3D: true,
         });
     }, preloader);
