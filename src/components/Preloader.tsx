@@ -44,7 +44,7 @@ function getPreloaderRows(randomIds: string[]): PreloaderSlot[][] {
     [
       { type: 'image', id: randomIds[5] },
       { type: 'image', id: randomIds[6], visibility: 'tablet-up' },
-      { type: 'image', id: randomIds[13] },
+      { type: 'image', id: randomIds[13], visibility: 'tablet-up' },
       { type: 'empty', key: 'middle-space', visibility: 'desktop-only' },
       { type: 'empty', key: 'middle-space-r1', visibility: 'all' },
       { type: 'empty', key: 'middle-space-r2', visibility: 'all' },
