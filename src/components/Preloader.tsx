@@ -105,8 +105,9 @@ export function Preloader() {
           '.preloader-brand',
           {
             opacity: 0,
+            xPercent: 25,
             duration: 0.5,
-            ease: 'power2.out',
+            ease: 'power1.out',
           },
           0.5,
         )
