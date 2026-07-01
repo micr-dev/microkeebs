@@ -10,6 +10,7 @@ import { SmoothScroll } from './components/SmoothScroll';
 import { PageTransitions } from './components/PageTransitions';
 import { TargetCursor } from './components/TargetCursor';
 import { DebugCursor } from './components/DebugCursor';
+import { Preloader } from './components/Preloader';
 import { KeyboardBuild } from './types/Build';
 import type { BlogPost as BlogPostType } from './types/BlogPost';
 import { ThemeProvider } from './contexts/ThemeContext';
@@ -264,6 +265,7 @@ function AppContent() {
 
   return (
     <>
+      <Preloader />
       <SmoothScroll>
         <div className={`min-h-screen ${isDark ? 'bg-[#1c1c1c]' : 'bg-[#a7a495]'} relative`}>
           <PageTransitions currentPage={currentPage}>
