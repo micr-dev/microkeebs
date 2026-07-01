@@ -103,15 +103,26 @@ export function Preloader() {
       gsap.timeline({ onComplete: () => setVisible(false) })
         .from(images, {
           scale: 0,
-          yPercent: -50,
-          duration: 1,
-          ease: 'power1.out',
-          stagger: 0.2,
+          duration: 0.9,
+          ease: 'power3.out',
+          stagger: 0.12,
+          force3D: true,
+          transformOrigin: '50% 50%',
         })
+        .from(
+          '.preloader-brand',
+          {
+            opacity: 0,
+            duration: 0.5,
+            ease: 'power2.out',
+          },
+          0.5,
+        )
         .to(preloader, {
           yPercent: -110,
-          duration: 0.6,
-          ease: 'power1.out',
+          duration: 0.8,
+          ease: 'power2.inOut',
+          force3D: true,
         });
     }, preloader);
 
@@ -128,7 +139,7 @@ export function Preloader() {
     <div
       ref={containerRef}
       aria-hidden="true"
-      className={`fixed inset-0 z-[9999] grid grid-rows-3 gap-2 p-2 ${themeClasses}`}
+      className={`fixed inset-0 z-[9999] grid grid-rows-3 gap-2 overflow-hidden p-2 transform-gpu backface-hidden will-change-transform ${themeClasses}`}
     >
       {PRELOADER_ROWS.map((row, rowIndex) => (
         <div
@@ -148,13 +159,15 @@ export function Preloader() {
               return (
                 <div
                   key={slot.key}
-                  className={`${slotClasses} flex flex-col items-center justify-center text-center uppercase`}
+                  className={`${slotClasses} overflow-hidden text-center uppercase`}
                 >
-                  <div className="text-3xl font-bold leading-none tracking-normal sm:text-4xl lg:text-5xl">
-                    MICROKEEBS
-                  </div>
-                  <div className="mt-2 text-xs font-semibold tracking-normal opacity-70 sm:text-sm">
-                    SOUND TESTS
+                  <div className="preloader-brand absolute inset-0 flex flex-col items-center justify-center">
+                    <div className="text-3xl font-bold leading-none tracking-normal sm:text-4xl lg:text-5xl">
+                      MICROKEEBS
+                    </div>
+                    <div className="mt-2 text-xs font-semibold tracking-normal opacity-70 sm:text-sm">
+                      SOUND TESTS
+                    </div>
                   </div>
                 </div>
               );
