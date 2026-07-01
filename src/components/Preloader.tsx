@@ -1,6 +1,7 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { useTheme } from '../contexts/use-theme';
+import buildsData from '../data/builds.json';
 
 /**
  * GSAP Preloader inspired by 888 Studio's "Preloader 1"
@@ -32,32 +33,34 @@ type PreloaderSlot =
 
 // Six desktop slots per row mirror the Webflow source. Smaller breakpoints
 // hide selected slots so each row still reads as a single 5-column or 3-column strip.
-const PRELOADER_ROWS: PreloaderSlot[][] = [
-  [
-    { type: 'image', id: '7aM8Dg6wePs' },
-    { type: 'image', id: 'bNFwVyN-PAA' },
-    { type: 'empty', key: 'top-space', visibility: 'desktop-only' },
-    { type: 'image', id: 'Qmlj4zgzUac', visibility: 'tablet-up' },
-    { type: 'image', id: 'XdNu4YX4PSE', visibility: 'tablet-up' },
-    { type: 'image', id: 'Vgo9UKqfSbI' },
-  ],
-  [
-    { type: 'image', id: 'yYX5OJg1mIo' },
-    { type: 'image', id: 'XYydztEvHdk', visibility: 'tablet-up' },
-    { type: 'brand', key: 'microkeebs' },
-    { type: 'empty', key: 'middle-space', visibility: 'desktop-only' },
-    { type: 'image', id: 'oP6QJU2zwNg', visibility: 'tablet-up' },
-    { type: 'image', id: 'H2IkaUvgVhs' },
-  ],
-  [
-    { type: 'image', id: 'ISZuY2U3-6A' },
-    { type: 'empty', key: 'bottom-space-a', visibility: 'tablet-up' },
-    { type: 'image', id: 'tHxVcRIHGqU' },
-    { type: 'image', id: 'dDN38OwMLnw', visibility: 'tablet-up' },
-    { type: 'empty', key: 'bottom-space-b', visibility: 'desktop-only' },
-    { type: 'image', id: 'BVmT-khkd5E' },
-  ],
-];
+function getPreloaderRows(randomIds: string[]): PreloaderSlot[][] {
+  return [
+    [
+      { type: 'image', id: randomIds[0] },
+      { type: 'image', id: randomIds[1] },
+      { type: 'empty', key: 'top-space', visibility: 'desktop-only' },
+      { type: 'image', id: randomIds[2], visibility: 'tablet-up' },
+      { type: 'image', id: randomIds[3], visibility: 'tablet-up' },
+      { type: 'image', id: randomIds[4] },
+    ],
+    [
+      { type: 'image', id: randomIds[5] },
+      { type: 'image', id: randomIds[6], visibility: 'tablet-up' },
+      { type: 'brand', key: 'microkeebs' },
+      { type: 'empty', key: 'middle-space', visibility: 'desktop-only' },
+      { type: 'image', id: randomIds[7], visibility: 'tablet-up' },
+      { type: 'image', id: randomIds[8] },
+    ],
+    [
+      { type: 'image', id: randomIds[9] },
+      { type: 'empty', key: 'bottom-space-a', visibility: 'tablet-up' },
+      { type: 'image', id: randomIds[10] },
+      { type: 'image', id: randomIds[11], visibility: 'tablet-up' },
+      { type: 'empty', key: 'bottom-space-b', visibility: 'desktop-only' },
+      { type: 'image', id: randomIds[12] },
+    ],
+  ];
+}
 
 const visibilityClasses: Record<SlotVisibility, string> = {
   all: '',
@@ -69,6 +72,15 @@ export function Preloader() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(true);
   const { isDark } = useTheme();
+  const allBuildIds = useMemo(
+    () => buildsData.map((build: { id: string }) => build.id),
+    [],
+  );
+  const randomIds = useMemo(() => {
+    const shuffled = [...allBuildIds].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, 16);
+  }, [allBuildIds]);
+  const preloaderRows = useMemo(() => getPreloaderRows(randomIds), [randomIds]);
 
   useEffect(() => {
     const preloader = containerRef.current;
@@ -119,7 +131,7 @@ export function Preloader() {
       aria-hidden="true"
       className={`fixed inset-0 z-[9999] grid grid-rows-3 gap-2 overflow-hidden p-2 transform-gpu backface-hidden will-change-transform ${themeClasses}`}
     >
-      {PRELOADER_ROWS.map((row, rowIndex) => (
+      {preloaderRows.map((row, rowIndex) => (
         <div
           key={rowIndex}
           className="grid min-h-0 grid-cols-3 gap-2 place-items-center sm:grid-cols-5 lg:grid-cols-6"
@@ -137,9 +149,9 @@ export function Preloader() {
               return (
                 <div
                   key={slot.key}
-                  className={`${slotClasses} overflow-hidden text-center uppercase`}
+                  className={`${slotClasses} flex flex-col items-center justify-center text-center uppercase`}
                 >
-                  <div className="preloader-brand absolute inset-0 flex flex-col items-center justify-center">
+                  <div className="preloader-brand">
                     <div className="text-3xl font-bold leading-none tracking-normal sm:text-4xl lg:text-5xl">
                       MICROKEEBS
                     </div>
