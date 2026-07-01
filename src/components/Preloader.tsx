@@ -9,11 +9,7 @@ import { useTheme } from '../contexts/use-theme';
  * A full-screen overlay with a responsive 3-row grid of keyboard
  * thumbnails. Images scale up from 0 with a stagger, then the panel
  * slides up and disappears to reveal the site.
- *
- * Only plays on first visit per session (sessionStorage guard).
  */
-
-const STORAGE_KEY = 'microkeebs-preloader-seen';
 
 type SlotVisibility = 'all' | 'tablet-up' | 'desktop-only';
 
@@ -69,33 +65,15 @@ const visibilityClasses: Record<SlotVisibility, string> = {
   'desktop-only': 'hidden lg:block',
 };
 
-function shouldShowPreloader() {
-  try {
-    return sessionStorage.getItem(STORAGE_KEY) !== '1';
-  } catch {
-    return true;
-  }
-}
-
-function markPreloaderSeen() {
-  try {
-    sessionStorage.setItem(STORAGE_KEY, '1');
-  } catch {
-    // Storage can be unavailable in private or restricted browser contexts.
-  }
-}
-
 export function Preloader() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(shouldShowPreloader);
+  const [visible, setVisible] = useState(true);
   const { isDark } = useTheme();
 
   useEffect(() => {
     const preloader = containerRef.current;
 
     if (!visible || !preloader) return;
-
-    markPreloaderSeen();
 
     const ctx = gsap.context(() => {
       const images = gsap.utils.toArray<HTMLImageElement>('.image_preloader');
