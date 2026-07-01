@@ -149,7 +149,7 @@ export function Preloader() {
               return (
                 <div
                   key={slot.key}
-                  className={`${slotClasses} flex flex-col items-center justify-center text-center uppercase`}
+                  className={`${slotClasses} flex flex-col items-end justify-center text-right uppercase`}
                 >
                   <div className="preloader-brand">
                     <div className="text-3xl font-bold leading-none tracking-normal sm:text-4xl lg:text-5xl">
