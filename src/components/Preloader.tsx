@@ -10,6 +10,9 @@ import buildsData from '../data/builds.json';
  * A full-screen overlay with a responsive 3-row grid of keyboard
  * thumbnails. Images scale up from 0 with a stagger, then the panel
  * slides up and disappears to reveal the site.
+ *
+ * The brand text is absolutely positioned over the middle row at the
+ * far right edge so it doesn't overlap any thumbnail.
  */
 
 type SlotVisibility = 'all' | 'tablet-up' | 'desktop-only';
@@ -22,11 +25,6 @@ type PreloaderSlot =
     }
   | {
       type: 'empty';
-      key: string;
-      visibility?: SlotVisibility;
-    }
-  | {
-      type: 'brand';
       key: string;
       visibility?: SlotVisibility;
     };
@@ -46,10 +44,10 @@ function getPreloaderRows(randomIds: string[]): PreloaderSlot[][] {
     [
       { type: 'image', id: randomIds[5] },
       { type: 'image', id: randomIds[6], visibility: 'tablet-up' },
-      { type: 'brand', key: 'microkeebs' },
+      { type: 'image', id: randomIds[13] },
       { type: 'empty', key: 'middle-space', visibility: 'desktop-only' },
-      { type: 'image', id: randomIds[7], visibility: 'tablet-up' },
-      { type: 'image', id: randomIds[8] },
+      { type: 'empty', key: 'middle-space-r1', visibility: 'all' },
+      { type: 'empty', key: 'middle-space-r2', visibility: 'all' },
     ],
     [
       { type: 'image', id: randomIds[9] },
@@ -134,7 +132,7 @@ export function Preloader() {
       {preloaderRows.map((row, rowIndex) => (
         <div
           key={rowIndex}
-          className="grid min-h-0 grid-cols-3 gap-2 place-items-center sm:grid-cols-5 lg:grid-cols-6"
+          className="relative grid min-h-0 grid-cols-3 gap-2 place-items-center sm:grid-cols-5 lg:grid-cols-6"
         >
           {row.map((slot) => {
             const slotClasses = `relative h-full min-h-0 w-full ${
@@ -143,24 +141,6 @@ export function Preloader() {
 
             if (slot.type === 'empty') {
               return <div key={slot.key} className={slotClasses} />;
-            }
-
-            if (slot.type === 'brand') {
-              return (
-                <div
-                  key={slot.key}
-                  className={`${slotClasses} flex flex-col items-end justify-center text-right uppercase`}
-                >
-                  <div className="preloader-brand">
-                    <div className="text-3xl font-bold leading-none tracking-normal sm:text-4xl lg:text-5xl">
-                      MICROKEEBS
-                    </div>
-                    <div className="mt-2 text-xs font-semibold tracking-normal opacity-70 sm:text-sm">
-                      SOUND TESTS
-                    </div>
-                  </div>
-                </div>
-              );
             }
 
             return (
@@ -177,6 +157,18 @@ export function Preloader() {
           })}
         </div>
       ))}
+
+      {/* Brand text — absolutely positioned over middle row only, right-aligned */}
+      <div className="preloader-brand pointer-events-none absolute right-0 flex items-center justify-end pr-4 sm:pr-8 lg:pr-12" style={{ top: '33.333%', bottom: '33.333%' }}>
+        <div className="text-right uppercase">
+          <div className="text-3xl font-bold leading-none tracking-normal sm:text-4xl lg:text-5xl">
+            MICROKEEBS
+          </div>
+          <div className="mt-2 text-xs font-semibold tracking-normal opacity-70 sm:text-sm">
+            SOUND TESTS
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
