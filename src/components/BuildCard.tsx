@@ -77,8 +77,8 @@ export function BuildCard({
   }, [fadeLqip]);
 
   return (
-    <div onClick={onClick} className="cursor-pointer cursor-target">
-      <div className="w-full h-64 mb-4 overflow-hidden relative">
+    <div onClick={onClick} className="cursor-pointer">
+      <div className="cursor-target w-full h-64 mb-4 overflow-hidden relative">
         <div className={`gallery-media ${isDark ? 'gallery-media--dark' : 'gallery-media--light'}`}>
           {coverImage && (
             <>
