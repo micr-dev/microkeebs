@@ -6,3 +6,6 @@
 - label: optimized Microkeebs gallery images use one _sm suffix so crawlers and browsers load the intended asset without a 404 fallback
   command: test -z "$(/usr/bin/find public/images -type f -name '*_sm_sm.webp' -print -quit)" && npm run build
   tags: [implemented]
+- label: the Microkeebs build gallery uses section, list, and article semantics while preserving its existing content and presentation
+  command: npm run build
+  tags: [implemented]

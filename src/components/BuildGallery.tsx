@@ -38,8 +38,13 @@ export function BuildGallery({ onBuildSelect }: BuildGalleryProps) {
   });
 
   return (
-    <div className={`${isDark ? "bg-[#1c1c1c]" : "bg-[#a7a495]"} min-h-screen`}>
+    <section
+      aria-labelledby="builds-heading"
+      className={`${isDark ? "bg-[#1c1c1c]" : "bg-[#a7a495]"} min-h-screen`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-8 py-8">
+        <h2 id="builds-heading" className="sr-only">Keyboard builds and sound tests</h2>
+
         {/* Controls */}
         <div className="flex flex-wrap items-center gap-4 mb-12">
           {/* Show timestamps toggle */}
@@ -120,13 +125,13 @@ export function BuildGallery({ onBuildSelect }: BuildGalleryProps) {
 
         {/* Grid */}
         <LayoutGroup>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {sortedBuilds.map((build, index) => {
               const isInitialLoad = index < 9;
               const delay = isInitialLoad ? index * 0.1 : 0;
               
               return (
-              <motion.div 
+              <motion.li
                 key={build.id} 
                 layout
                 initial={{ opacity: 0, y: 50 }}
@@ -157,12 +162,12 @@ export function BuildGallery({ onBuildSelect }: BuildGalleryProps) {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </motion.div>
+              </motion.li>
             );})}
-          </div>
+          </ul>
         </LayoutGroup>
       </div>
       <Footer />
-    </div>
+    </section>
   );
 }

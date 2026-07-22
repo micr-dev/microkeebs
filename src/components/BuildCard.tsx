@@ -77,7 +77,7 @@ export function BuildCard({
   }, [fadeLqip]);
 
   return (
-    <div onClick={onClick} className="cursor-pointer">
+    <article onClick={onClick} className="cursor-pointer">
       <div className="cursor-target w-full h-64 mb-4 overflow-hidden relative">
         <div className={`gallery-media ${isDark ? 'gallery-media--dark' : 'gallery-media--light'}`}>
           {coverImage && (
@@ -184,6 +184,6 @@ export function BuildCard({
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </article>
   );
 }
