@@ -1,0 +1,5 @@
+
+# seo
+- label: the Microkeebs site exposes accurate canonical metadata, social previews, creator and website structured data, semantic page headings, and an AI-readable site summary without changing visible content or layout
+  command: npm run build
+  tags: [implemented]

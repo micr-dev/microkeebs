@@ -50,16 +50,20 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
   return (
     <header className={`${isDark ? 'bg-[#2a2a2a]' : 'bg-[#b5b3a7]'} py-4 fade-in`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
-        {/* Logo */}
-        <button 
-          onClick={() => handleTabClick('builds')}
-          className="flex items-center float-animation cursor-pointer"
-        >
-          <LogoIcon 
-            size={48}
-            className={`h-10 sm:h-12 w-auto ${isDark ? 'text-[#a7a495]' : 'text-[#1c1c1c]'}`}
-          />
-        </button>
+        {/* The logo is the visible page title, so keep its existing presentation and expose that hierarchy to crawlers and assistive technology. */}
+        <h1>
+          <button
+            type="button"
+            onClick={() => handleTabClick('builds')}
+            className="flex items-center float-animation cursor-pointer"
+          >
+            <span className="sr-only">Microkeebs keyboard sound tests</span>
+            <LogoIcon
+              size={48}
+              className={`h-10 sm:h-12 w-auto ${isDark ? 'text-[#a7a495]' : 'text-[#1c1c1c]'}`}
+            />
+          </button>
+        </h1>
         
         {/* Navigation */}
         <nav ref={navRef} className="flex space-x-0 order-last sm:order-none relative">

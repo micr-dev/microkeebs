@@ -1,6 +1,7 @@
 {
   "name": "Microkeebs",
   "short_name": "Microkeebs",
+  "description": "Custom mechanical keyboard builds, sound tests, and rankings.",
   "icons": [
     {
       "src": "/favicon-black-32.png",

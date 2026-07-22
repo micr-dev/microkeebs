@@ -1,0 +1,21 @@
+# Microkeebs
+
+> Custom mechanical keyboard builds, sound tests, and rankings, covering MX and electro-capacitive keyboards.
+
+## Site
+
+- [Keyboard builds and sound tests](https://microkeebs.micr.dev/): Browse Microkeebs builds and watch their sound tests.
+- [Keyboard rankings](https://microkeebs.micr.dev/#/rankings): Compare ranked keyboards featured by Microkeebs.
+- [Contact](https://microkeebs.micr.dev/#/contact): Find the site's contact options.
+
+## Social
+
+- [YouTube](https://www.youtube.com/@microkeebs): Watch Microkeebs keyboard sound tests and build videos.
+- [Instagram](https://www.instagram.com/microkeebs/): View Microkeebs keyboard photos and short-form posts.
+- [TikTok](https://www.tiktok.com/@microkeebs): Watch short Microkeebs keyboard videos.
+- [Reddit](https://www.reddit.com/user/Microkeebs/): View the Microkeebs Reddit profile.
+
+## Key Facts
+
+- Microkeebs covers custom mechanical keyboard builds and sound tests.
+- The collection includes MX and electro-capacitive keyboards.
