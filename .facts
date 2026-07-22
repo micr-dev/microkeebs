@@ -3,3 +3,6 @@
 - label: the Microkeebs site exposes accurate canonical metadata, social previews, creator and website structured data, semantic page headings, and an AI-readable site summary without changing visible content or layout
   command: npm run build
   tags: [implemented]
+- label: optimized Microkeebs gallery images use one _sm suffix so crawlers and browsers load the intended asset without a 404 fallback
+  command: test -z "$(/usr/bin/find public/images -type f -name '*_sm_sm.webp' -print -quit)" && npm run build
+  tags: [implemented]
