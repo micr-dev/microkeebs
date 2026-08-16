@@ -1,5 +1,29 @@
 [
   {
+    "id": "0NEIRjjSpBE",
+    "title": "Ophanim",
+    "youtubeTitle": "Ophanim with lubed Cherry MX Browns",
+    "category": "MX",
+    "timestamp": "2026-08-14T12:00:00.000Z",
+    "images": [
+      "./images/0NEIRjjSpBE/thumbnail.jpg"
+    ],
+    "youtubeUrl": "https://youtu.be/0NEIRjjSpBE",
+    "specs": {
+      "Keyboard": "Ophanim by Baionlenja and BowlKeyboards (Raw)",
+      "Keycaps": "GMK Rainy Day + Hangul + Windowed",
+      "Switches": "Cherry MX Hyperglide Brown",
+      "Lube": "Krytox 205g0",
+      "Films": "PC (?)",
+      "Springs": "22mm Doble-Stage 45g (?) lubed with GPL 105",
+      "Plate": "Full Alu",
+      "Mount": "Dampened Top Mount",
+      "Stabilizers": "i have no clue lubed with 205g0",
+      "PCB": "Hotswap",
+      "Others": "-"
+    }
+  },
+  {
     "id": "7aM8Dg6wePs",
     "title": "Navi60",
     "youtubeTitle": "Navi60 with lubed Cherry MX Blacks",
